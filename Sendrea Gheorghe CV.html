@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gheorghe Șendrea - Full Stack Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 0;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 50px 60px 40px;
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header .title {
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            font-size: 14px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item::before {
+            content: "•";
+            font-size: 18px;
+        }
+        
+        .content {
+            padding: 50px 60px;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2a5298;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+            background: #f8f9fa;
+            padding: 25px;
+            border-left: 4px solid #2a5298;
+            margin-bottom: 40px;
+        }
+        
+        .experience-item {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 4px;
+        }
+        
+        .company {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .date {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+            white-space: nowrap;
+        }
+        
+        .job-description {
+            margin-top: 12px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .responsibilities {
+            margin-top: 10px;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 8px;
+            padding-left: 5px;
+            color: #555;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .tech-tag {
+            background: #e8f0fe;
+            color: #1e3c72;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+        
+        .skill-category h4 {
+            color: #1e3c72;
+            font-size: 16px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .skill-category p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .projects-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .project-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+        
+        .project-card h4 {
+            color: #1e3c72;
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .project-card p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+        
+        .project-link {
+            color: #2a5298;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .education-item {
+            margin-bottom: 25px;
+        }
+        
+        .education-item h4 {
+            color: #1e3c72;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .education-item .institution {
+            color: #555;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+        
+        .education-item .date {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .languages {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .language-item {
+            background: #f8f9fa;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border-left: 4px solid #2a5298;
+        }
+        
+        .language-item strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+        
+        .language-item span {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                max-width: 100%;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 30px 30px 25px;
+            }
+            .header h1 {
+                font-size: 32px;
+            }
+            .content {
+                padding: 30px 30px;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Gheorghe Șendrea</h1>
+            <div class="title">Full Stack Web Developer</div>
+            <div class="contact-info">
+                <div class="contact-item">Timișoara, Romania</div>
+                <div class="contact-item">+40 735 144 905</div>
+                <div class="contact-item">sendrea.george@gmail.com</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="summary">
+                Full Stack Developer specializing in building modern, scalable web applications. Proven track record delivering innovative solutions for international clients in finance, media, and technology sectors. Passionate about AI technologies, clean code practices, and continuous learning.
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Full Stack Developer</div>
+                            <div class="company">Visma | Tripletex</div>
+                        </div>
+                        <div class="date">February 2024 - Present</div>
+                    </div>
+                    <div class="job-description">
+                        Developing and maintaining Tripletex cloud platform, a financial system tailored for electrical and plumbing industries.
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Led implementation of invoicing module, participating in analysis, estimation, and full epic development</li>
+                        <li>Integrated AI capabilities using OpenAI, Spring AI, and AWS Bedrock to automate business processes</li>
+                        <li>Refactored legacy code and added new features with focus on performance and scalability</li>
+                        <li>Collaborated in Agile/Scrum team to consistently deliver business value</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">Storybook</span>
+                        <span class="tech-tag">OpenAI</span>
+                        <span class="tech-tag">SWR</span>
+                        <span class="tech-tag">Git</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Frontend Developer</div>
+                            <div class="company">WeVideo</div>
+                        </div>
+                        <div class="date">October 2022 - December 2023</div>
+                    </div>
+                    <div class="job-description">
+                        Developed features for WeVideo cloud-based video editing platform, focusing on Google Classroom integration and educational capabilities.
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Implemented Google Classroom integration for educational module, serving thousands of students</li>
+                        <li>Built complex React components using Redux-saga and Redux Toolkit for state management</li>
+                        <li>Participated in estimation and implementation of new epics with direct user impact</li>
+                        <li>Performed bug fixes and performance optimization for concurrent users at scale</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Redux-saga</span>
+                        <span class="tech-tag">Redux Toolkit</span>
+                        <span class="tech-tag">RTK Query</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Jira</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Full Stack Developer</div>
+                            <div class="company">Cognizant Softvision</div>
+                        </div>
+                        <div class="date">February 2021 - November 2021</div>
+                    </div>
+                    <div class="job-description">
+                        Developed features for Wellmark Blue Cross and Blue Shield health insurance platform.
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Created RESTful API endpoints using Node.js and TypeScript with comprehensive documentation</li>
+                        <li>Developed Angular components for user-facing features</li>
+                        <li>Documented APIs using Swagger to facilitate cross-team collaboration</li>
+                        <li>Worked with MongoDB for cloud-based data management on Azure infrastructure</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Swagger</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Full Stack Developer</div>
+                            <div class="company">WebChain</div>
+                        </div>
+                        <div class="date">April 2019 - February 2021</div>
+                    </div>
+                    <div class="job-description">
+                        Built web applications for Toyota Lead Management System and VARD Connect (Tulcea Shipyard).
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Developed complete RESTful APIs using PHP 7.3 and Slim Framework with Doctrine ORM</li>
+                        <li>Created Vue.js components for dynamic user interfaces</li>
+                        <li>Implemented functional tests using PHPUnit to ensure code quality</li>
+                        <li>Containerized applications using Docker for consistent deployment environments</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Slim Framework</span>
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Angular</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Web Developer</div>
+                            <div class="company">Infobest Developer</div>
+                        </div>
+                        <div class="date">July 2017 - April 2019</div>
+                    </div>
+                    <div class="job-description">
+                        Developed features for Vitrado and ServicePro platforms serving the German market.
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Participated in design, estimation, and code implementation for complex applications</li>
+                        <li>Built full-stack solutions using PHP Phalcon Framework and MariaDB</li>
+                        <li>Implemented interfaces using multiple frameworks: jQuery, AngularJS, Angular 4, and ExtJS</li>
+                    </ul>
+                    <div class="tech-stack">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Phalcon</span>
+                        <span class="tech-tag">MariaDB</span>
+                        <span class="tech-tag">AngularJS</span>
+                        <span class="tech-tag">Angular 4</span>
+                        <span class="tech-tag">ExtJS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Frontend Development</h4>
+                        <p><strong>Expert:</strong> React.js, TypeScript, JavaScript (ES6+), Redux, Redux Toolkit, RTK Query<br>
+                        <strong>Advanced:</strong> Vue.js, Angular, HTML5, CSS3, Storybook, SWR<br>
+                        <strong>Intermediate:</strong> React Native, jQuery, AngularJS</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Backend Development</h4>
+                        <p><strong>Advanced:</strong> Node.js, Java, Spring Boot<br>
+                        <strong>Intermediate:</strong> PHP, Laravel, Phalcon Framework, Slim Framework<br>
+                        <strong>APIs:</strong> RESTful API Design, Swagger, Postman</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Databases</h4>
+                        <p><strong>SQL:</strong> MySQL, MariaDB<br>
+                        <strong>NoSQL:</strong> MongoDB<br>
+                        <strong>ORM:</strong> Doctrine ORM, TypeORM</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>AI & Cloud</h4>
+                        <p><strong>AI:</strong> OpenAI, Spring AI, AWS Bedrock, LightLLM<br>
+                        <strong>Cloud:</strong> Azure, Amazon Amplify, Firebase<br>
+                        <strong>DevOps:</strong> Docker, Git, CI/CD</p>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Methodologies & Tools</h4>
+                        <p><strong>Methodologies:</strong> Agile, Scrum, TDD<br>
+                        <strong>Testing:</strong> PHPUnit, Jest<br>
+                        <strong>Tools:</strong> Jira, Git, SVN, Postman</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Personal Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h4>Weight Tracker (Google Play Store)</h4>
+                        <p>React Native mobile application for tracking body weight and fat percentage. Published on Google Play Store with active users.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Android</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>Gaming Memes Platform</h4>
+                        <p>Web and mobile platform for sharing gaming memes. Full-stack implementation with React, React Native, and Node.js backend.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>Human Resources Management</h4>
+                        <p>Web application for HR departments featuring candidate management and advanced filtering by multiple criteria.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h4>Personal Trainer App</h4>
+                        <p>Web application for personal training management, built with Angular and Phalcon Framework.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">Phalcon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="education-item">
+                    <h4>Faculty of Automation and Computer Engineering</h4>
+                    <div class="institution">Politehnica University of Timișoara</div>
+                    <div class="date">2015 - 2018</div>
+                </div>
+                
+                <div class="education-item">
+                    <h4>High School Diploma</h4>
+                    <div class="institution">Technological High School No. 1 Câmpulung Moldovenesc</div>
+                    <div class="date">2011 - 2015</div>
+                    <p style="font-size: 14px; color: #666; margin-top: 8px;">Certificate of Linguistic Competence - English | Certificate of Digital Competence - Experienced User</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Languages</h2>
+                <div class="languages">
+                    <div class="language-item">
+                        <strong>Romanian</strong>
+                        <span>Native</span>
+                    </div>
+                    <div class="language-item">
+                        <strong>English</strong>
+                        <span>Advanced (B2-C1)</span>
+                    </div>
+                    <div class="language-item">
+                        <strong>Russian</strong>
+                        <span>Basic (A2)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
