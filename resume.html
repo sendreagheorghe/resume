@@ -214,12 +214,36 @@
             line-height: 1.7;
             margin-bottom: 8px;
         }
+
+        .project-title-section {
+            display: flex;
+            justify-content: space-between;
+        }
         
         .project-link {
             color: #2a5298;
             text-decoration: none;
             font-size: 13px;
             font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.25s ease, filter 0.25s ease;
+        }
+        .project-link svg {
+            transition: stroke 0.25s ease;
+        }
+
+        .project-link:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 2px 4px rgba(42, 82, 152, 0.3));
+        }
+        .project-link:hover svg path,
+        .project-link:hover svg line,
+        .project-link:hover svg polyline,
+        .project-link:hover svg rect {
+            stroke: #1e3d73; /* darker version of #2a5298 */
         }
         
         .education-item {
@@ -352,7 +376,7 @@
                             <div class="job-title">Frontend Developer</div>
                             <div class="company">WeVideo</div>
                         </div>
-                        <div class="date">October 2022 - December 2023</div>
+                        <div class="date">November 2021 - December 2023</div>
                     </div>
                     <div class="job-description">
                         Developed features for WeVideo cloud-based video editing platform, focusing on Google Classroom integration and educational capabilities.
@@ -461,15 +485,15 @@
                     <div class="skill-category">
                         <h4>Frontend Development</h4>
                         <p><strong>Expert:</strong> React.js, TypeScript, JavaScript (ES6+), Redux, Redux Toolkit, RTK Query<br>
-                        <strong>Advanced:</strong> Vue.js, Angular, HTML5, CSS3, Storybook, SWR<br>
-                        <strong>Intermediate:</strong> React Native, jQuery, AngularJS</p>
+                        <strong>Advanced:</strong> Angular, HTML5, CSS3, Storybook, SWR<br>
+                        <strong>Intermediate:</strong> Vue.js, React Native, jQuery, AngularJS</p>
                     </div>
                     
                     <div class="skill-category">
                         <h4>Backend Development</h4>
                         <p><strong>Advanced:</strong> Node.js, Java, Spring Boot<br>
                         <strong>Intermediate:</strong> PHP, Laravel, Phalcon Framework, Slim Framework<br>
-                        <strong>APIs:</strong> RESTful API Design, Swagger, Postman</p>
+                        <strong>APIs:</strong> REST API Design, Swagger, Postman</p>
                     </div>
                     
                     <div class="skill-category">
@@ -482,7 +506,7 @@
                     <div class="skill-category">
                         <h4>AI & Cloud</h4>
                         <p><strong>AI:</strong> OpenAI, Spring AI, AWS Bedrock, LightLLM<br>
-                        <strong>Cloud:</strong> Azure, Amazon Amplify, Firebase<br>
+                        <strong>Cloud:</strong> Amazon Amplify, Firebase<br>
                         <strong>DevOps:</strong> Docker, Git, CI/CD</p>
                     </div>
                     
@@ -499,30 +523,103 @@
                 <h2 class="section-title">Personal Projects</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <h4>Weight Tracker (Google Play Store)</h4>
+                        <div class="project-title-section">
+                            <h4>Weight Tracker (Google Play Store)</h4>
+
+                            <div class="project-link">
+                                <a href="https://play.google.com/store/apps/details?id=com.weighttrackerdevsendrea&pli=1" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" role="img">
+                                        <title>Visit link</title>
+                                        <!-- outer box / page -->
+                                        <path d="M5 7a2 2 0 0 1 2-2h6" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <rect x="3" y="7" width="14" height="14" rx="2" ry="2" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <!-- arrow pointing out (external link) -->
+                                        <polyline points="15 3 21 3 21 9" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <line x1="10" y1="14" x2="21" y2="3" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                            </div>
+                        </div>
                         <p>React Native mobile application for tracking body weight and fat percentage. Published on Google Play Store with active users.</p>
+
                         <div class="tech-stack">
                             <span class="tech-tag">React Native</span>
                             <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Firebase</span>
                         </div>
                     </div>
                     
                     <div class="project-card">
-                        <h4>Gaming Memes Platform</h4>
+                        <div class="project-title-section">
+                            <h4>Gaming Memes Platform</h4>
+
+                            <div class="project-link">
+                                <a href="https://dev.d28y8ft2cnn15u.amplifyapp.com/" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" role="img">
+                                        <title>Visit link</title>
+                                        <!-- outer box / page -->
+                                        <path d="M5 7a2 2 0 0 1 2-2h6" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <rect x="3" y="7" width="14" height="14" rx="2" ry="2" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <!-- arrow pointing out (external link) -->
+                                        <polyline points="15 3 21 3 21 9" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <line x1="10" y1="14" x2="21" y2="3" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                            </div>
+                        </div>
+
                         <p>Web and mobile platform for sharing gaming memes. Full-stack implementation with React, React Native, and Node.js backend.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">React Native</span>
                             <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Aws</span>
+                            <span class="tech-tag">Amplify</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Redux-toolkit</span>
+                            <span class="tech-tag">RTK-Query</span>
                         </div>
                     </div>
                     
                     <div class="project-card">
-                        <h4>Human Resources Management</h4>
+                        <div class="project-title-section">
+                            <h4>Human Resources Management</h4>
+                            <div class="project-link">
+                                <a href="https://dev.d2gjblx7etqsiu.amplifyapp.com" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" role="img">
+                                        <title>Visit link</title>
+                                        <!-- outer box / page -->
+                                        <path d="M5 7a2 2 0 0 1 2-2h6" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <rect x="3" y="7" width="14" height="14" rx="2" ry="2" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <!-- arrow pointing out (external link) -->
+                                        <polyline points="15 3 21 3 21 9" fill="none" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <line x1="10" y1="14" x2="21" y2="3" stroke="#2a5298" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                            </div>
+                        </div>
                         <p>Web application for HR departments featuring candidate management and advanced filtering by multiple criteria.</p>
                         <div class="tech-stack">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Aws</span>
+                            <span class="tech-tag">Aws Amplify</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-title-section">
+                            <h4>Body weight measurement</h4>
+                        </div>
+                        <p>React Native mobile application for tracking body weight and fat percentage.</p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Android</span>
                         </div>
                     </div>
                     
