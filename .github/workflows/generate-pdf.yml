@@ -6,9 +6,8 @@ on:
   push:
     branches:
       - main
-  paths:
-    - 'resume.html' # run only this file changes
-
+    paths:
+      - 'resume.html' # run only this file changes
 
 jobs:
   build:
