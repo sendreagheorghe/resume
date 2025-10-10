@@ -8,6 +8,7 @@ on:
       - main
     paths:
       - 'resume.html' # run only this file changes
+  workflow_dispatch:
 
 permissions:
   contents: write
