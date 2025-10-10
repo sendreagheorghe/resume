@@ -9,6 +9,9 @@ on:
     paths:
       - 'resume.html' # run only this file changes
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
