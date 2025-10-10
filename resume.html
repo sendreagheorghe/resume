@@ -319,6 +319,15 @@
                 flex-direction: column;
             }
         }
+        @media print {
+            .skills-grid {
+                display: block; /* fallback for print */
+                /* Or use a fixed number of columns */
+                display: grid;
+                grid-template-columns: 1fr 1fr; /* two columns for print */
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 <body>
