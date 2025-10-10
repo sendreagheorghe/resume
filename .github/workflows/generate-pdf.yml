@@ -7,7 +7,7 @@ on:
     branches:
       - main
     paths:
-      - 'resume.html' # run only this file changes
+      - '../../index.html' # run only this file changes
   workflow_dispatch:
 
 permissions:
